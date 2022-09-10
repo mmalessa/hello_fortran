@@ -62,6 +62,9 @@ all: $(APP_NAME) ## Build an application
 $(APP_NAME): $(OBJS)
 	$(LD) -o $@ $^
 
+# dependencies between object files
+# hello.f90.o: someother.f90.o other.mod
+
 $(OBJS): %.o: %
 	$(FC) -c -o $@ $<
 
